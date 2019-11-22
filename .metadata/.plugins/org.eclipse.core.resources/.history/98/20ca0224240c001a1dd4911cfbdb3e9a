@@ -1,0 +1,11 @@
+package com.bms.Daos;
+
+import com.bms.Models.User;
+
+public interface UserDao {
+
+		public User getUserById(int uid);
+		public String validateUser(int uid, String password);
+		
+	
+}

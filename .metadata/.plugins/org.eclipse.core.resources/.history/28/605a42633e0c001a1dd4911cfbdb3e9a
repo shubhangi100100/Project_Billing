@@ -1,0 +1,12 @@
+package com.bms.Models;
+
+import javax.persistence.Id;
+
+public class Employees {
+	
+	@Id
+	private int employeeId;
+	private String employeeName;
+	
+
+}

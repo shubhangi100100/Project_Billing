@@ -1,0 +1,9 @@
+package com.bms.Models;
+
+public class ProjectAllocation {
+
+	public ProjectAllocation() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

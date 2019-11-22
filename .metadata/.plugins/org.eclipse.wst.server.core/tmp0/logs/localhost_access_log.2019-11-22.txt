@@ -1,0 +1,2 @@
+127.0.0.1 - - [22/Nov/2019:09:30:26 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [22/Nov/2019:09:30:27 +0530] "GET /BillingManagementSystem_front/WEB-INF/jsps/AdminPage.jsp HTTP/1.1" 404 1047

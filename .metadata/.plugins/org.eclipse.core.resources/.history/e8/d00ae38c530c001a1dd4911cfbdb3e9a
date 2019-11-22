@@ -1,0 +1,30 @@
+package com.bms.Test;
+
+import static java.lang.System.out;
+
+import java.util.List;
+
+import org.junit.BeforeClass;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.bms.Config.dbConfig;
+import com.bms.Daos.UserDao;
+import com.bms.Models.Roles;
+
+public class RolesTest {
+
+private static UserDao userDaoObj;
+	
+	@BeforeClass
+	public static void init() {
+		out.println("i am init start");
+		
+		AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(dbConfig.class);
+		userDaoObj=context.getBean(UserDao.class, "userDao");
+		out.println("I m in init - end");
+		
+	}
+	
+	public List<Roles> getAllRoles() {
+		
+}

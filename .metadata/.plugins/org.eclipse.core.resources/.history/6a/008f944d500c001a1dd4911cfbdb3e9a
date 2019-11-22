@@ -1,0 +1,17 @@
+package com.bms.DaoImpl;
+
+import java.util.List;
+
+import com.bms.Daos.RolesDao;
+import com.bms.Models.Roles;
+
+public class RolesDaoImpl implements RolesDao{
+
+	public List<Roles> getAllRoles() {
+		
+		return null;
+	}
+
+	
+
+}

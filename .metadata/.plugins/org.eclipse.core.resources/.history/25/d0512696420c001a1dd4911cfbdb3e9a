@@ -1,0 +1,9 @@
+package com.bms.Models;
+
+public class Attendance {
+
+	public Attendance() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

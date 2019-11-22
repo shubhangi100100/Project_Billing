@@ -1,0 +1,6 @@
+package com.bms.Daos;
+
+public interface UserDao {
+
+	
+}

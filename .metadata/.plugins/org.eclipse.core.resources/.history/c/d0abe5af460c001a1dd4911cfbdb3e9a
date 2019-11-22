@@ -1,0 +1,51 @@
+package com.bms.Models;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ConfigTable")
+public class ProjectConfig {
+	@Id
+	@GeneratedValue
+	private int configId;
+	private String location;
+	@ManyToOne
+	@JoinColumn(name="projectId")
+	Project pObj;
+	
+	@Column(name="perhourbill")
+	private int perHourBilling;
+	private int roleId;
+	
+	public int getConfigId() {
+		return configId;
+	}
+	public void setConfigId(int configId) {
+		this.configId = configId;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	
+	public int getPerHourBilling() {
+		return perHourBilling;
+	}
+	public void setPerHourBilling(int perHourBilling) {
+		this.perHourBilling = perHourBilling;
+	}
+
+	
+	}
+	
+	
+
+

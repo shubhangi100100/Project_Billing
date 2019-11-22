@@ -1,0 +1,23 @@
+package com.bms.Models;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ProjectAllocation")
+public class ProjectAllocation {
+	@Id
+	private int allocationId;
+	
+	
+	
+	public int getAllocationId() {
+		return allocationId;
+	}
+	public void setAllocationId(int allocationId) {
+		this.allocationId = allocationId;
+	}
+	
+	
+}

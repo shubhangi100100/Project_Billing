@@ -1,0 +1,19 @@
+package com.bms.Models;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ConfigTable")
+public class ProjectConfig {
+	@Id
+	@GeneratedValue
+	private int configId;
+	private String location;
+	private int perHourBilling;
+	private int projectId;
+	private int roleId;
+	
+	
+
+}

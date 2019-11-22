@@ -1,0 +1,13 @@
+package com.bms.Service;
+
+import java.util.List;
+
+import com.bms.Models.Project;
+
+public interface ProjectService {
+
+	public List<Project> getAllProjects();
+	
+	
+
+}

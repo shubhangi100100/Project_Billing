@@ -1,0 +1,28 @@
+package com.bms.DaoImpl;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.bms.Daos.UserDao;
+import com.bms.Models.User;
+
+public class UserDaoImpl implements UserDao {
+
+	private	SessionFactory sessionFactory;
+	
+	
+	public User getUserById(int uid) {
+		Session session= sessionFactory.getCurrentSession();
+		User user= session.get(User.class, uid);
+		return user;
+	}
+
+	public String validateUser(int uid, String password) {
+		
+		return null;
+	}
+	
+	
+
+	
+}

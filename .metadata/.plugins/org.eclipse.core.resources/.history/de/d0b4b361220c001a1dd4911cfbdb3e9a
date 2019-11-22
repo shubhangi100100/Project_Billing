@@ -1,0 +1,9 @@
+package com.bms.DaoImpl;
+
+public class UserDaoImpl {
+
+	public UserDaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.bms.Models;
+
+public class Attendance {
+
+	private int attendanceId;
+	private int month;
+	private int year;
+	private int halfDay;
+	private int fullDay;
+	private int projectId;
+	private int employeeId;
+	
+}

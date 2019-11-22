@@ -1,0 +1,25 @@
+package com.bms.DaoImpl;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.bms.Daos.RolesDao;
+import com.bms.Models.Roles;
+
+public class RolesDaoImpl implements RolesDao{
+	@Autowired
+	SessionFactory sessionFactory;
+	
+	public List<Roles> getAllRoles() {
+		Session session=sessionFactory.getCurrentSession();
+		session.createQuery("from com.bms.models.Roles");
+		
+		return null;
+	}
+
+	
+
+}

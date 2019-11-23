@@ -51,6 +51,17 @@ public class ProjectServiceImpl implements ProjectService{
 		
 	}
 
+	public List<ProjectConfig> getAllProjectConfig(int projectId) {
+		 return projectDaoObj.getAllProjectConfig(projectId);
+		 
+	}
+
+	public List<ProjectAllocation> getProjectAllocations() {
+		
+	return	projectDaoObj.getProjectAllocations();
+		
+	}
+
 	
 	
 }

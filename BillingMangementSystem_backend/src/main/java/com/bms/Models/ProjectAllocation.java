@@ -1,6 +1,7 @@
 package com.bms.Models;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,11 +15,12 @@ public class ProjectAllocation {
 	@Id
 	@GeneratedValue
 	private int allocationId;
-	@ManyToOne
+	
+	@OneToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="configId")
 	ProjectConfig pcObj;
 	
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name="employeeId")
 	Employee eObj;
 	

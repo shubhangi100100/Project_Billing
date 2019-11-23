@@ -113,7 +113,7 @@ public class AdminController {
 	
 	@RequestMapping(value="/submitAllocation", method=RequestMethod.GET)
 	public String setAllocation(@RequestParam int projectId, @RequestParam int roleId,@RequestParam String location,@RequestParam int employeeId, ModelMap map) {
-	
+		// to show the id on console
 		System.out.println(projectId+""+roleId+""+location+""+employeeId);
 		List<Project> proj=projectServiceObj.getAllProjects();
 		List<Roles> roles= rolesServiceObj.getAllRoles();

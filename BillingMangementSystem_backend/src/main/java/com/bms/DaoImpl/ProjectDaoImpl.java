@@ -96,6 +96,29 @@ public class ProjectDaoImpl implements ProjectDao {
 			
 		}
 
+
+
+
+		public List<ProjectConfig> getAllProjectConfig(int projectId) {
+			Session session=sessionFactory.getCurrentSession();
+			Query q=session.createQuery("from com.bms.Models.ProjectConfig where pObj.projectId=:projectId");
+			q.setParameter(projectId, projectId);
+			return q.list();
+			
+		}
+
+
+
+
+		public List<ProjectAllocation> getProjectAllocations() {
+			Session session=sessionFactory.getCurrentSession();
+			Query q=session.createQuery("from com.bms.Models.ProjAllocation");
+			
+			List list=q.list();
+			return list;
+			
+		}
+
 	
 
 	

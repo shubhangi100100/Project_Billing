@@ -19,16 +19,15 @@ public class Attendance {
 	private int fullDay;
 	
 	@ManyToOne
-	@JoinColumn(name="projectId")
+	@JoinColumn(name="projectId", insertable=false,updatable=false)
 	Project pObj;
 	
 	@OneToOne
-	@JoinColumn(name="employeeId")
+	@JoinColumn(name="employeeId", insertable=false,updatable=false)
 	Employee eObj;
 	
-	
-	
-	
+	private int employeeId;
+	private int projectId;
 	public int getAttendanceId() {
 		return attendanceId;
 	}
@@ -71,11 +70,26 @@ public class Attendance {
 	public void seteObj(Employee eObj) {
 		this.eObj = eObj;
 	}
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+	public int getProjectId() {
+		return projectId;
+	}
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
+	}
 	@Override
 	public String toString() {
 		return "Attendance [attendanceId=" + attendanceId + ", month=" + month + ", year=" + year + ", halfDay="
-				+ halfDay + ", fullDay=" + fullDay + ", pObj=" + pObj + ", eObj=" + eObj + "]";
+				+ halfDay + ", fullDay=" + fullDay + ", pObj=" + pObj + ", eObj=" + eObj + ", employeeId=" + employeeId
+				+ ", projectId=" + projectId + "]";
 	}
+	
+	
 	
 	
 	

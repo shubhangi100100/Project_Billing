@@ -19,7 +19,8 @@ public interface ProjectService {
 	public List<ProjectConfig>  validateProject(int projectId, int roleId, String location);
 	public boolean setAllocation(ProjectAllocation proAllObj);
 	
-	
+	public List<ProjectConfig> getAllProjectConfig(int projectId);
+	public List<ProjectAllocation>  getProjectAllocations();
 	
 
 }

@@ -16,24 +16,18 @@ import com.bms.Service.UserService;
 public class UserServiceImpl implements UserService {
 	@Autowired
 	private	SessionFactory sessionFactory;
+	@Autowired
+	UserDao userDaoObj;
 	
 	
 	public User getUserById(int uid) {
-		Session session= sessionFactory.getCurrentSession();
-		User user= session.get(User.class, uid);
-		return user;
+		return userDaoObj.getUserById(uid);
+		
 	}
 
 	public User validateUser(int uid, String password) {
-		Session session= sessionFactory.getCurrentSession();
-		User uObj= session.get(User.class, uid);
-		if(uObj!= null) {
-			if(uObj.getPassword().equals(password))
+		return userDaoObj.validateUser(uid, password);
 		
-	 return uObj;
-			
-	}
-		return null;
 		
 	}
 	

@@ -8,12 +8,14 @@ import org.springframework.stereotype.Repository;
 
 import com.bms.Daos.UserDao;
 import com.bms.Models.User;
+import com.bms.Service.UserService;
 @Repository("userDao")
 @Component
 public class UserDaoImpl implements UserDao {
 	@Autowired
 	private	SessionFactory sessionFactory;
-	
+	@Autowired 
+	private UserService userServiceObj;
 	
 	public User getUserById(int uid) {
 		Session session= sessionFactory.getCurrentSession();

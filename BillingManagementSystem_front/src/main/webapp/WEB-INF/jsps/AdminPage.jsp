@@ -8,7 +8,16 @@
 <title> Hello Admin</title>
 </head>
 <body>
-<h1> Welcome Admin</h1>
+<jsp:include page="Header.jsp"/>
+<h1 align="center"> Welcome Admin</h1>
+		
+      <a href="getConfig">Configure Project</a>
+      <a href="getAllocation">Allocate Project</a>
+      <a href="viewReport">View Report</a>
+      <jsp:include page="Footer.jsp"></jsp:include>
+    </div>
+  </div> 
+</div>
 
 </body>
 </html>

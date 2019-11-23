@@ -11,26 +11,46 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.bms.Daos.ProjectDao;
 import com.bms.Models.Project;
+import com.bms.Models.ProjectAllocation;
+import com.bms.Models.ProjectConfig;
 import com.bms.Service.ProjectService;
+
 @Service("ProjectService")
 @Transactional
 public class ProjectServiceImpl implements ProjectService{
+	
 	@Autowired
-	SessionFactory sessionFactory;
+	ProjectDao projectDaoObj;
+	
 	public List<Project> getAllProjects() {
-		Session session=sessionFactory.getCurrentSession();
-		Query q= session.createQuery("from com.bms.models.Project");
-		if(q.list()== null) {
-			System.out.println("Is Null");
-			return null;
-		}
-		else
-			
-			return q.list();
+		return projectDaoObj.getAllProjects();
+		
 		
 		
 	}
 
-	
+	public List<ProjectConfig> getProjectConfig() {
+		return projectDaoObj.getProjectConfig();
+		
+	}
 
+	public boolean getProject(ProjectConfig pcObj) {
+		
+		return projectDaoObj.getProject(pcObj);
+	}
+
+	public List<ProjectConfig> validateProject(int projectId, int roleId, String location) {
+		
+		return projectDaoObj.validateProject(projectId, roleId, location);
+		
+	}
+
+	public boolean setAllocation(ProjectAllocation proAllObj) {
+	
+		return projectDaoObj.setAllocation(proAllObj);
+		
+	}
+
+	
+	
 }

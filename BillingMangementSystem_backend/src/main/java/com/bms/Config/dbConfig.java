@@ -47,7 +47,7 @@ public class dbConfig {
 		
 		LocalSessionFactoryBuilder sb= new LocalSessionFactoryBuilder(getDataSource());
 		sb.addProperties(p);
-		sb.scanPackages("com.bms");
+		sb.scanPackages("com.bms.Models");
 		
 		SessionFactory sf= sb.buildSessionFactory();
 		return sf;

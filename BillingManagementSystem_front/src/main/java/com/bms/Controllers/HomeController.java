@@ -33,7 +33,7 @@ public class HomeController {
 	@Autowired
 	HttpSession session;
 	
-	@RequestMapping(value="OpenPage", method=RequestMethod.GET)
+	@RequestMapping(value="OpenPage", method=RequestMethod.POST)
 	public String validateUser(@RequestParam int userid, @RequestParam String password) {
 		User uObj= userDao.validateUser(userid, password);
 		

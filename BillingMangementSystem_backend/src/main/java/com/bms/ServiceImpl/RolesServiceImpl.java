@@ -17,17 +17,12 @@ import com.bms.Service.RolesService;
 public class RolesServiceImpl implements RolesService{
 	@Autowired
 	SessionFactory sessionFactory;
+	@Autowired
+	RolesDao rolesDaoObj;
 	
 	public List<Roles> getAllRoles() {
-		Session session=sessionFactory.getCurrentSession();
-		Query q= session.createQuery("from com.bms.models.Roles");
-		if(q.list()== null) {
-			System.out.println("Is Null");
-			return null;
-		}
-		else
-			
-			return q.list();
+		return rolesDaoObj.getAllRoles();
+		
 		
 	}
 

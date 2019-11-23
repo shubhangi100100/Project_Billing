@@ -14,7 +14,7 @@
 <jsp:include page="Header.jsp"/>
 <div align="center" class="container">
   
-  <form action="OpenPage" >
+  <form action="OpenPage" method="post" >
     <div class="form-group">
       <label for="ID"> ID:</label>
       <input type="text" class="form-control" id="email" placeholder="Enter ID" name="userid">
@@ -28,6 +28,7 @@
     </div>
     --> 
     <button type="submit" class="btn btn-default">Submit</button>
+    <jsp:include page="Footer.jsp"></jsp:include>
   </form>
 </div>
 

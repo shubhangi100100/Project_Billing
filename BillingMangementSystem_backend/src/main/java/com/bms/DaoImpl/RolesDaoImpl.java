@@ -10,16 +10,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import com.bms.Daos.RolesDao;
 import com.bms.Models.Roles;
+import com.bms.Service.RolesService;
 @Component
 @Repository(value="rolesDao")
 
 public class RolesDaoImpl implements RolesDao{
 	@Autowired
 	SessionFactory sessionFactory;
+	@Autowired
+	RolesService rolesServiceObject;
 	
 	public List<Roles> getAllRoles() {
 		Session session=sessionFactory.getCurrentSession();
-		Query q= session.createQuery("from com.bms.models.Roles");
+		Query q= session.createQuery("from com.bms.Models.Roles");
 		if(q.list()== null) {
 			System.out.println("Is Null");
 			return null;

@@ -7,6 +7,8 @@
 <title>Hello Deo</title>
 </head>
 <body>
+<jsp:include page="Header.jsp"/>
 <h1> Welcome Data Entry Operator</h1>
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

@@ -16,17 +16,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bms.Daos.UserDao;
 import com.bms.Models.User;
+import com.bms.Service.EmployeeService;
+import com.bms.Service.UserService;
 
 @Controller
 public class HomeController {
 	@Autowired
 	UserDao userDao;
+	@Autowired
+	UserService userServiceObj;
+	@Autowired
+	EmployeeService employeeServiceObj;
+	
 	
 	
 	@Autowired
 	HttpSession session;
 	
-
+	public boolean sessionHandler(ModelMap map) {
+		if (session.getAttribute("user")== null){
+	map.addAttribute("msg", "non existent session");
+	return true;
+	
+	}
+		else
+			return false;
+	}
 	
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
@@ -50,6 +65,11 @@ public class HomeController {
 		
 	}
 	
+	@RequestMapping(value="home", method=RequestMethod.GET)
+	public String homePage() {
+		return "HomePage";
+	}
+
 	
 	@RequestMapping(value="OpenPage", method=RequestMethod.POST)
 	public String validateUser(@RequestParam int userid, @RequestParam String password, ModelMap map) {

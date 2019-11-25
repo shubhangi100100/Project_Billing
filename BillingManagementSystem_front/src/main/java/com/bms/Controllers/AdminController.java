@@ -2,6 +2,8 @@ package com.bms.Controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.tomcat.jdbc.pool.PoolConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,11 +38,29 @@ public class AdminController {
 	UserService userServiceObj;
 	@Autowired 
 	EmployeeService employeeServiceObj;
+	@Autowired
+	HttpSession session;
+	
+	public boolean sessionHandler(ModelMap map) {
+		if (session.getAttribute("user")== null){
+	map.addAttribute("msg", "non existent session");
+	return true;
+	
+	}
+		else
+			return false;
+	}
 	
 	
 	
 	@RequestMapping(value="/getConfig",method=RequestMethod.GET)
-	public ModelAndView getLists() {
+	public ModelAndView getLists(ModelMap map) {
+		
+		if(sessionHandler(map)) {
+			ModelAndView mv=new ModelAndView("Login");
+			return mv;
+			
+		}
 	List<Project> proj=projectServiceObj.getAllProjects();
 	List<Roles> roles= rolesServiceObj.getAllRoles();
 	
@@ -58,7 +78,15 @@ public class AdminController {
 	}
 
 	@RequestMapping(value="/saveConfig", method=RequestMethod.POST)
-	public ModelAndView makeConfig(@ModelAttribute(name="pObj") ProjectConfig pcObj) {
+	public ModelAndView makeConfig(@ModelAttribute(name="pObj") ProjectConfig pcObj, ModelMap map) {
+		if(sessionHandler(map)) {
+			ModelAndView mv=new ModelAndView("Login");
+			return mv;
+			
+		}
+		
+		
+		
 		System.out.println(pcObj);
 		
 		boolean saved= projectServiceObj.getProject(pcObj);
@@ -90,8 +118,13 @@ public class AdminController {
 		
 	}
 	@RequestMapping(value="/getAllocation", method=RequestMethod.GET)
-	public ModelAndView allocateProject() {
+	public ModelAndView allocateProject(ModelMap map) {
 	
+		if(sessionHandler(map)) {
+			ModelAndView mv=new ModelAndView("Login");
+			return mv;
+			
+		}
 
 		List<Project> proj=projectServiceObj.getAllProjects();
 		List<Roles> roles= rolesServiceObj.getAllRoles();
@@ -114,7 +147,13 @@ public class AdminController {
 	@RequestMapping(value="/submitAllocation", method=RequestMethod.GET)
 	public String setAllocation(@RequestParam int projectId, @RequestParam int roleId,@RequestParam String location,@RequestParam int employeeId, ModelMap map) {
 		// to show the id on console
+		
 		System.out.println(projectId+""+roleId+""+location+""+employeeId);
+		if(sessionHandler(map)) {
+			//ModelAndView mv=new ModelAndView("Login");
+			return "Login";
+			
+		}
 		List<Project> proj=projectServiceObj.getAllProjects();
 		List<Roles> roles= rolesServiceObj.getAllRoles();
 		List<Employee> emp=employeeServiceObj.getAllEmployees();

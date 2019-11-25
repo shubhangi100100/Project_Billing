@@ -45,8 +45,25 @@ public class DeoController {
 	RolesService rolesServiceObj;
 	
 	
+
+	public boolean sessionHandler(ModelMap map) {
+		if (session.getAttribute("user")== null){
+	map.addAttribute("msg", "non existent session");
+	return true;
+	
+	}
+		else
+			return false;
+	}
+	
 	@RequestMapping(value="/setAtt", method=RequestMethod.GET)
-	public ModelAndView enterAttendance() {
+	public ModelAndView enterAttendance(ModelMap map) {
+		
+		if(sessionHandler(map)) {
+			ModelAndView mv=new ModelAndView("Login");
+			return mv;
+			
+		}
 		List<Project> proj=projectServiceObj.getAllProjects();
 		//List<Employee> emp=employeeServiceObj.getAllEmployees();
 		 
@@ -88,7 +105,15 @@ public class DeoController {
 
 	
 	@RequestMapping(value="/saveEnteredAttendance", method=RequestMethod.GET)
-	public ModelAndView saveAttendance(@ModelAttribute(name="aObj") Attendance aObj, @RequestParam int projectId, @RequestParam int employeeId){
+	public ModelAndView saveAttendance(@ModelAttribute(name="aObj") Attendance aObj, @RequestParam int projectId, @RequestParam int employeeId, ModelMap map){
+		if(sessionHandler(map)) {
+			ModelAndView mv=new ModelAndView("Login");
+			return mv;
+			
+		}
+		
+		
+		
 		List<Project> proj=projectServiceObj.getAllProjects();
 		System.out.println(projectId);
 		

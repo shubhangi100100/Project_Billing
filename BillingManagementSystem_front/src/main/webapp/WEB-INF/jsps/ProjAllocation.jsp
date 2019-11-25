@@ -9,7 +9,7 @@
 </head>
 <body>
 <div align="center">
-<jsp:include page="Header.jsp"/>
+<jsp:include page="Header1.jsp"/>
 <form action="submitAllocation"  method="get">
 <h1 align="center"> Project Allocation Page</h1>
 				<label>Projects:</label>

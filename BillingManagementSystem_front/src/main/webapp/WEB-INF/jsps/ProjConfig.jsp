@@ -10,7 +10,7 @@
 </head>
 <body>
 <div align="center">
-<jsp:include page="Header.jsp"/>
+<jsp:include page="Header1.jsp"/>
 <h1> Configuration Page</h1>
 
 

@@ -101,8 +101,8 @@ public class ProjectDaoImpl implements ProjectDao {
 
 		public List<ProjectConfig> getAllProjectConfig(int projectId) {
 			Session session=sessionFactory.getCurrentSession();
-			Query q=session.createQuery("from com.bms.Models.ProjectConfig where pObj.projectId=:projectId");
-			q.setParameter(projectId, projectId);
+			Query q=session.createQuery("from com.bms.Models.ProjectConfig where projectId=:projectId");
+			q.setParameter("projectId", projectId);
 			return q.list();
 			
 		}
@@ -112,11 +112,21 @@ public class ProjectDaoImpl implements ProjectDao {
 
 		public List<ProjectAllocation> getProjectAllocations() {
 			Session session=sessionFactory.getCurrentSession();
-			Query q=session.createQuery("from com.bms.Models.ProjAllocation");
+			Query q=session.createQuery("from com.bms.Models.ProjectAllocation");
 			
 			List list=q.list();
 			return list;
 			
+		}
+
+
+
+
+		public Project getProjectById(int projectId) {
+		Session session=sessionFactory.getCurrentSession();
+		Project p= session.get(Project.class, projectId);
+		return p;
+		
 		}
 
 	

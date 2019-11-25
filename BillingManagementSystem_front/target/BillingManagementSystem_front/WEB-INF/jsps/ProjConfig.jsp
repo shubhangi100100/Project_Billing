@@ -10,11 +10,15 @@
 </head>
 <body>
 <div align="center">
+<jsp:include page="Header1.jsp"/>
 <h1> Configuration Page</h1>
-<f:form action="saveConfig" modelAttribute="pcObj" method="POST" id="projectform">
-<label>Projects:</label>
 
-			<f:select path="pObj.projectId" >
+
+<f:form action="saveConfig" modelAttribute="pObj" method="post" id="projectform">
+
+
+<label>Projects:</label>
+		<f:select path="projectId" >
 
 			 	 <core:forEach items="${proj}" var="pOb">
 
@@ -32,7 +36,7 @@
 
 				<f:select path="roleId" >
 
-				 	 <core:forEach items="${role}" var="rOb">
+				 	 <core:forEach items="${roles}" var="rOb">
 
 						<f:option value="${rOb.roleId}">${rOb.roleName} </f:option>
 
@@ -40,6 +44,7 @@
 
 				</f:select></div>
 
+			
 			
 
 			<div><label>Location:</label></br>
@@ -81,6 +86,8 @@
 
 
 </f:form>
+
 </div>
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

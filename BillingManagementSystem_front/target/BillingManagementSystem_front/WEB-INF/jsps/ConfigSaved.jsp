@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="Header1.jsp"/>
 details entered successfully
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

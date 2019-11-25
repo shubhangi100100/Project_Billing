@@ -22,5 +22,5 @@ public interface ProjectService {
 	public List<ProjectConfig> getAllProjectConfig(int projectId);
 	public List<ProjectAllocation>  getProjectAllocations();
 	
-
+	public Project getProjectById(int projectId);
 }

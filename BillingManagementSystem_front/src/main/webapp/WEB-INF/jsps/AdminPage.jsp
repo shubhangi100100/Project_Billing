@@ -8,7 +8,7 @@
 <title> Hello Admin</title>
 </head>
 <body>
-<jsp:include page="Header.jsp"/>
+<jsp:include page="Header1.jsp"/>
 <h1 align="center"> Welcome Admin</h1>
 		
       <a href="getConfig">Configure Project</a>

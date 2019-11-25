@@ -7,9 +7,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.bms.Models.Attendance;
@@ -45,10 +48,10 @@ public class DeoController {
 	@RequestMapping(value="/setAtt", method=RequestMethod.GET)
 	public ModelAndView enterAttendance() {
 		List<Project> proj=projectServiceObj.getAllProjects();
-		List<Employee> emp=employeeServiceObj.getAllEmployees();
+		//List<Employee> emp=employeeServiceObj.getAllEmployees();
 		 
 		Attendance aObj= new Attendance();
-		ModelAndView mv= new ModelAndView("DataEntryPage");
+		ModelAndView mv= new ModelAndView("AttendancePage");
 		
 		mv.addObject("proj", proj);
 		mv.addObject("aObj", aObj);
@@ -57,9 +60,9 @@ public class DeoController {
 		
 		
 	}
-	
-	@RequestMapping(value="submitAttendance", method=RequestMethod.GET)
-	public List<Employee> getAllEmployees(@RequestParam("projectId")int projectId){
+	@ResponseBody
+	@RequestMapping(value="/employeeDetails", method=RequestMethod.GET)
+	public List<Employee> getAllEmployees(@RequestParam("projectId") int projectId){
 		
 		System.out.println("Given project id:" +projectId);
 		List<Employee> empList=new ArrayList();
@@ -80,6 +83,40 @@ public class DeoController {
 		 System.out.println("empList : "+empList);
 		 
 		 return empList;
+		
+	}
+
+	
+	@RequestMapping(value="/saveEnteredAttendance", method=RequestMethod.GET)
+	public ModelAndView saveAttendance(@ModelAttribute(name="aObj") Attendance aObj, @RequestParam int projectId, @RequestParam int employeeId){
+		List<Project> proj=projectServiceObj.getAllProjects();
+		System.out.println(projectId);
+		
+		List<Employee> emp=employeeServiceObj.getAllEmployees();
+		ModelAndView mv= new ModelAndView("AttendanceSaved");
+		  mv.addObject("proj", proj);
+		  mv.addObject("emp", emp);
+			
+		Employee empObj= employeeServiceObj.getEmployeeById(employeeId);
+		Project projObj= projectServiceObj.getProjectById(projectId);
+		 
+		aObj.seteObj(empObj);
+		aObj.setpObj(projObj);
+		
+		boolean saved= employeeServiceObj.setAttendance(aObj);
+		
+	if(saved) {
+		mv.addObject("text", "you have successfully saved the attendance");
+		return mv;
+		
+	}
+	else
+	{
+		mv.addObject("text", "you cannot mark attendance");
+		return mv;
+		
+	}
+		
 		
 	}
 

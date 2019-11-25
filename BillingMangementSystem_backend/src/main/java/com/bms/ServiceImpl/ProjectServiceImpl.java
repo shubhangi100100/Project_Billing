@@ -62,6 +62,11 @@ public class ProjectServiceImpl implements ProjectService{
 		
 	}
 
+	public Project getProjectById(int projectId) {
+	
+		return projectDaoObj.getProjectById(projectId);
+	}
+
 	
 	
 }

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bms.Daos.EmployeeDao;
+import com.bms.Models.Attendance;
 import com.bms.Models.Employee;
 import com.bms.Service.EmployeeService;
 @Repository("EmployeeDao")
@@ -38,6 +39,25 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		
 		return e;
 	}
+
+	public boolean  setAttendance(Attendance Obj) {
+		Session session=sessionFactory.getCurrentSession();
+		Query q= session.createQuery("from com.bms.Models.Attendance where projectId=:projectId and employeeId=:employeeId");
+		q.setParameter("employeeId", Obj.getEmployeeId() );
+		q.setParameter("projectId", Obj.getProjectId());
+		
+		if(q.list().size()==0) {
+			session.save(Obj);
+			return true;
+			
+		}
+		else
+			return false;
+		
+	}
+
+	
+	
 
 	
 	

@@ -18,6 +18,7 @@ public interface ProjectDao {
 	public List<ProjectAllocation>  getProjectAllocations();
 	
 	
+	public Project getProjectById(int projectId);
 	
 	
 

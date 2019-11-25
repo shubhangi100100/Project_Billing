@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,6 +8,11 @@
 <title>Hello Deo</title>
 </head>
 <body>
-<h1> Welcome Data Entry Operator</h1>
+<jsp:include page="Header1.jsp"/>
+<h1 align="center"> Welcome Data Entry Operator</h1>
+<div align="center">
+<a href="setAtt">View Attendance</a>
+</div>
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

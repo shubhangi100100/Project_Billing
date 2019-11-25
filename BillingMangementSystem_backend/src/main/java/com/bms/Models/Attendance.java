@@ -1,6 +1,7 @@
 package com.bms.Models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -11,9 +12,10 @@ import javax.persistence.Table;
 @Table(name="Attendance")
 public class Attendance {
 	@Id
+	@GeneratedValue
 	private int attendanceId;
 	
-	private int month;
+	private String month;
 	private int year;
 	private int halfDay;
 	private int fullDay;
@@ -28,16 +30,19 @@ public class Attendance {
 	
 	private int employeeId;
 	private int projectId;
+	
+	
 	public int getAttendanceId() {
 		return attendanceId;
 	}
 	public void setAttendanceId(int attendanceId) {
 		this.attendanceId = attendanceId;
 	}
-	public int getMonth() {
+	
+	public String getMonth() {
 		return month;
 	}
-	public void setMonth(int month) {
+	public void setMonth(String month) {
 		this.month = month;
 	}
 	public int getYear() {
@@ -88,6 +93,8 @@ public class Attendance {
 				+ halfDay + ", fullDay=" + fullDay + ", pObj=" + pObj + ", eObj=" + eObj + ", employeeId=" + employeeId
 				+ ", projectId=" + projectId + "]";
 	}
+	
+	
 	
 	
 	

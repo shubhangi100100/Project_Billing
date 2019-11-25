@@ -90,7 +90,7 @@ public class AdminController {
 		
 	}
 	@RequestMapping(value="/getAllocation", method=RequestMethod.GET)
-	public ModelAndView allocateProject(@ModelAttribute(name="pObj") ProjectConfig pcObj) {
+	public ModelAndView allocateProject() {
 	
 
 		List<Project> proj=projectServiceObj.getAllProjects();

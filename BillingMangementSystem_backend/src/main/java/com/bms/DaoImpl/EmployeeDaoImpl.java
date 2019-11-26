@@ -42,9 +42,10 @@ public class EmployeeDaoImpl implements EmployeeDao{
 
 	public boolean  setAttendance(Attendance Obj) {
 		Session session=sessionFactory.getCurrentSession();
-		Query q= session.createQuery("from com.bms.Models.Attendance where projectId=:projectId and employeeId=:employeeId");
+		Query q= session.createQuery("from com.bms.Models.Attendance where employeeId=:employeeId and month=:month and year=:year");
 		q.setParameter("employeeId", Obj.getEmployeeId() );
-		q.setParameter("projectId", Obj.getProjectId());
+		q.setParameter("month", Obj.getMonth());
+		q.setParameter("year", Obj.getYear());
 		
 		if(q.list().size()==0) {
 			session.save(Obj);

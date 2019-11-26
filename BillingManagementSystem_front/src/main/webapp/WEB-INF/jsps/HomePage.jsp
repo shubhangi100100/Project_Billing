@@ -17,6 +17,11 @@
 		<div style="text-align: center;font-family: verdana;color:#000080" class="alert alert-success">${txt}
 		</div>
 		</core:if>
+		
+<core:if test="${not empty text2}">
+		<div style="text-align: center;font-family: verdana;color:#000080" class="alert alert-success">${text2}
+		</div>
+		</core:if>
 <div align="center">
 
 <jsp:include page="Header.jsp"/>

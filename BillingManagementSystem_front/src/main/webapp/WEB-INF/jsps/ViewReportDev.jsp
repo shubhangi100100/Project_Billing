@@ -75,29 +75,7 @@
 
 					
 
-					
-<!-- 
-					<div>
-					<label>Year :</label>
-		<f:select path="year" id="year" cssClass="form-control" required="true">
-
-			<f:option value="0">Select year</f:option>
-			<script type="text/javascript">
-			for(y=2019;y<2020;y++){
-				var optn = document.createElement("OPTION");
-				optn.text=y;
-				optn.value=y;
 				
-				if(y==2019){
-					optn.selected=true;
-				}
-				document.getElementById('year').options.add(optn);
-			}
-		</script>
-		</f:select>
-		</div>
-			-->
-		
 		
 				 	<label>Year :</label>
 
@@ -113,6 +91,6 @@
 					</div>
 
 				</form>
-				</div>
+		</div>		
 </body>
 </html>

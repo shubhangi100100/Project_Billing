@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
+         <%@ taglib prefix="core" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,17 +18,27 @@
 <title> Login Form</title>
 </head>
 <body>
-<jsp:include page="Header1.jsp"/>
+<jsp:include page="Header2.jsp"/>
+<core:if test="${not empty msg}">
+		<div style="text-align: center;font-family: verdana;color:#000080" class="alert alert-success">${msg}
+		</div>
+		</core:if>
+		
+<core:if test="${not empty text}">
+		<div style="text-align: center;font-family: verdana;color:#000080" class="alert alert-success">${text}
+		</div>
+		</core:if>
+
 <div align="center" class="container">
      ${txt}
   <form action="OpenPage" method="post" >
     <div class="form-group">
       <label for="ID"> ID:</label>
-      <input type="text" class="form-control" id="email" placeholder="Enter ID" name="userid">
+      <input type="text" class="form-control" id="email" placeholder="Enter ID" name="userid" required="true">
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required="true">
     </div>
    <!--  <script>
   window.history.pushState(null, "", window.location.href);

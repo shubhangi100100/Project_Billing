@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.bms.Daos.EmployeeDao;
 import com.bms.Daos.ProjectDao;
 import com.bms.Daos.RolesDao;
+import com.bms.Models.Attendance;
 import com.bms.Models.Employee;
 import com.bms.Models.Project;
 import com.bms.Models.ProjectAllocation;
@@ -42,7 +43,7 @@ public class AdminController {
 	HttpSession session;
 	
 	public boolean sessionHandler(ModelMap map) {
-		if (session.getAttribute("user")== null){
+		if (session.getAttribute("user")==null){
 	map.addAttribute("msg", "non existent session");
 	return true;
 	
@@ -84,11 +85,7 @@ public class AdminController {
 			return mv;
 			
 		}
-		
-		
-		
 		System.out.println(pcObj);
-		
 		boolean saved= projectServiceObj.getProject(pcObj);
 		System.out.println("saved" +saved);
 		
@@ -105,13 +102,13 @@ public class AdminController {
 		mv.addObject("pcObj",new ProjectConfig());
 		
 		if(saved) {
-			mv.addObject("msg","completed");
+			mv.addObject("msg","configuration completed");
 			return mv;
 			
 		}
 		else
 		{
-		mv.addObject("msg", "error");
+		mv.addObject("msg", "configuration error");
 		return mv;
 		
 		}
@@ -185,9 +182,67 @@ public class AdminController {
 		}
 
 		
+	}
+		
+		@RequestMapping(value="/viewReport", method=RequestMethod.GET)
+		public String getDeveloperBilling(ModelMap map) {
+			if(sessionHandler(map)) {
+
+				return "Login";
+
+			}
+		List<Attendance> aList=employeeServiceObj.getAllAttendance();
+		map.addAttribute("aList", aList);
+		return "ViewReportDev";
+		
+		
+		}
 		
 		
 	
+	@RequestMapping(value="/saveReport", method=RequestMethod.GET)
+	public ModelAndView saveReport(@RequestParam(name="month") String month,@RequestParam(name="employeeId") int employeeId,@RequestParam(name="year") int year,ModelMap map) {
+		if(sessionHandler(map)) {
+
+			return new ModelAndView("login");
+
+		}
+		ProjectAllocation pAll= projectServiceObj.getConfig(employeeId);
+		double perHourBilling=pAll.getPcObj().getPerHourBilling();
+
+		String name = employeeServiceObj.getEmpById(employeeId);
+
+		//System.out.println("i m in bill");
+
+		map.addAttribute("name", name);
+
+		Attendance att =employeeServiceObj.setBill(employeeId, month,year);
+
+		System.out.println(att.getFullDay());
+
+		double bill = employeeServiceObj.getBill(perHourBilling,att);
+
+		map.addAttribute("bill",bill);
+
+		map.addAttribute("eID", employeeId);
+
+		map.addAttribute("mnth",(month.charAt(0)+"").toUpperCase()+(month.substring(1).toLowerCase()));
+
+		map.addAttribute("yr",year);
+
+		ModelAndView mv=new ModelAndView("ShowViewReport");
+
+		//mv.addObject("msg","Developer Allocated Successfully..");
+
+		// System.out.println("enter in the bill controller");
+
+		return mv;
+
+	}
+
+	
+
+		
 	}
 	
 	
@@ -221,4 +276,3 @@ public class AdminController {
 	
 	
 	
-}

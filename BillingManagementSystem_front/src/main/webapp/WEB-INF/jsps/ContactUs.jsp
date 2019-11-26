@@ -7,12 +7,14 @@
 <title> Contact Us</title>
 </head>
 <body>
-<h1 align="center">
+<jsp:include page="Header2.jsp"/>
+<div align="center">
 Incase you want to contact us: 
 number: 9000788990
 email id: xyzbilling@gmail.com
 addres: plot no. 19-20, pkr building, noida
+</div>
 
-</h1>
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

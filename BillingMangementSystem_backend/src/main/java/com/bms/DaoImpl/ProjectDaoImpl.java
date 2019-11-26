@@ -129,6 +129,34 @@ public class ProjectDaoImpl implements ProjectDao {
 		
 		}
 
+
+
+
+		public ProjectAllocation getConfig(int id) {
+			Session session=sessionFactory.getCurrentSession();			
+
+			Query q=session.createQuery("from com.bms.Models.ProjectAllocation where eObj.employeeId=:id");
+
+			q.setParameter("id",id);
+			List<ProjectAllocation> listProjAll= q.list();
+			if(listProjAll.size()==0) {
+
+				return null;
+
+			}
+
+			else {
+
+			ProjectAllocation ProjAllocate = (ProjectAllocation)listProjAll.get(0);
+
+			System.out.println(ProjAllocate);
+
+			return ProjAllocate;
+
+			}
+			
+		}
+
 	
 
 	

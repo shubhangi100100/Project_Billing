@@ -19,6 +19,7 @@ public interface ProjectDao {
 	
 	
 	public Project getProjectById(int projectId);
+	public ProjectAllocation getConfig(int id);
 	
 	
 

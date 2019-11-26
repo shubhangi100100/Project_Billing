@@ -7,7 +7,7 @@
 <title> Hello Manager</title>
 </head>
 <body>
-<jsp:include page="Header1.jsp"/>
+<jsp:include page="Header2.jsp"/>
 <h1> Welcome Manager</h1>
 <jsp:include page="Footer.jsp"></jsp:include>
 </body>

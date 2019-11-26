@@ -5,6 +5,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -12,7 +18,7 @@
 </head>
 <body>
 
-<jsp:include page="Header1.jsp"/>
+<jsp:include page="DEHeader.jsp"/>
 
 <div align="center">
 <f:form action="saveEnteredAttendance" modelAttribute="aObj" method="get">
@@ -85,7 +91,7 @@
 
 			<f:option value="0">Select year</f:option>
 			<script type="text/javascript">
-			for(y=2015;y<2020;y++){
+			for(y=2019;y<2020;y++){
 				var optn = document.createElement("OPTION");
 				optn.text=y;
 				optn.value=y;
@@ -98,6 +104,8 @@
 		</script>
 		</f:select>
 		</div>
+	
+		
 		
 		<br>
 

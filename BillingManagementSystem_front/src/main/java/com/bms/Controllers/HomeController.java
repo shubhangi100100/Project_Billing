@@ -33,15 +33,6 @@ public class HomeController {
 	@Autowired
 	HttpSession session;
 	
-	public boolean sessionHandler(ModelMap map) {
-		if (session.getAttribute("user")== null){
-	map.addAttribute("msg", "non existent session");
-	return true;
-	
-	}
-		else
-			return false;
-	}
 	
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
@@ -61,40 +52,58 @@ public class HomeController {
 		session.invalidate();
 		map.addAttribute("txt", "you have been logged out");
 		
-		return "Login";
+		return "HomePage";
 		
 	}
 	
 	@RequestMapping(value="home", method=RequestMethod.GET)
 	public String homePage() {
-		return "HomePage";
+	
+				return "HomePage";
+			
 	}
-
+	
+	@RequestMapping(value="Adminhome", method=RequestMethod.GET)
+	public String AdminHome() {
+		return "AdminPage";
+	}
+	
+	
+	@RequestMapping(value="DEhome", method=RequestMethod.GET)
+	public String DEHome() {
+		return "DataEntryPage";
+	}
+	
 	
 	@RequestMapping(value="OpenPage", method=RequestMethod.POST)
 	public String validateUser(@RequestParam int userid, @RequestParam String password, ModelMap map) {
-		User uObj= userDao.validateUser(userid, password);
+		User user= userDao.validateUser(userid, password);
 		
-	if (uObj==null) {
+	if (user==null) {
 		map.addAttribute("msg", "userId or Password incorrect, please check it.");
 		
 		return "Login";
 		
 	}
 	else {
-		String role=uObj.getRole();
-		session.setAttribute("uObj",uObj);
+		String role=user.getRole();
+		session.setAttribute("user",user);
 		if(role.equals("Admin"))
 		{
+			map.addAttribute("user", user);
+			
 			return "AdminPage";
 			
 		}
 		else
 			if(role.equals("Data Entry Operator")) {
+				
+				map.addAttribute("user", user);
 			return "DataEntryPage";
 		
 	} 
 			else
+				map.addAttribute("user", user);
 				 return "ManagerPage";
 		 
 	}

@@ -11,5 +11,9 @@ public interface EmployeeDao {
 	public Employee getEmployeeById(int employeeId);
 	
 	public boolean setAttendance(Attendance Obj);
+	public List<Attendance> getAllAttendance();
+	public Attendance setBill(int id, String month, int year);
+	public double getBill(double perhourbill, Attendance aObj);
 	
+	public String getEmpById(int id); 
 }

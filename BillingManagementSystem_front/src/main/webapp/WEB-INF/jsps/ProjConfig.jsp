@@ -5,12 +5,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<script type="text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title> Configuration</title>
 </head>
 <body>
+<jsp:include page="AdminHeader.jsp"/>
 <div align="center">
-<jsp:include page="Header1.jsp"/>
+
 <h1> Configuration Page</h1>
 
 
@@ -71,7 +78,7 @@
 
 			<br><div class="form-group">
 
-	    			<label>Per Hour Billing  : </label> <f:input type="number" path="perHourBilling" size="30" cssClass="form-control" placeholder="Enter Per Hour Billing" required="required"/>
+	    			<label>Per Hour Billing  : </label> <f:input type="number" path="perHourBilling" size="30" min="10" max="200" cssClass="form-control" placeholder="Enter Per Hour Billing" required="required"/>
 		   
 
 			 </div>

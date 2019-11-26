@@ -7,8 +7,11 @@
 <title>About Us</title>
 </head>
 <body>
-<h1 align="center">
+<jsp:include page="Header2.jsp"/>
+<div align="center"></div>
 This is a billing management system which helps to ease out the functionality of billing. 
-</h1>
+</div>
+
+<jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

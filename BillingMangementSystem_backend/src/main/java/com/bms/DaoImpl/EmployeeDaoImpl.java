@@ -56,6 +56,55 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		
 	}
 
+	public List<Attendance> getAllAttendance() {
+		Session session=sessionFactory.getCurrentSession();
+		Query q= session.createQuery("from com.bms.Models.Attendance");
+		return q.list();
+	}
+
+	public Attendance setBill(int id, String month, int year) {
+		Session session=sessionFactory.getCurrentSession();
+		Query q=session.createQuery("from com.bms.Models.Attendance where eObj.employeeId=:id and month=:mnth and year=:yr");
+		q.setParameter("id",id);
+
+		q.setParameter("mnth",month);
+
+		q.setParameter("yr",year);
+		
+		List<Attendance> aList=q.list();
+		if(aList.size()!=0) {
+
+			System.out.println("obj");
+
+			return aList.get(0);
+
+		}
+
+		return null;
+		
+	}
+
+	public double getBill(double perhourbill, Attendance aObj) {
+		double halfDay=aObj.getHalfDay()*4.5;
+
+		double fullDay=aObj.getFullDay()*9;
+
+		double bill=((halfDay*perhourbill)+(fullDay*perhourbill));
+
+		return bill;
+	}
+
+	
+	
+	public String getEmpById(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		Employee obj = session.get(Employee.class, id);
+
+		String nameOfEmployee = obj.getEmployeeName();
+		return nameOfEmployee;
+	}
+	}
+
 	
 	
 
@@ -63,4 +112,4 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	
 	
 
-}
+

@@ -36,5 +36,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employeeDaoObj.setAttendance(Obj);
 	}
 
+	public List<Attendance> getAllAttendance() {
+		
+		return employeeDaoObj.getAllAttendance();
+	}
+
+	public Attendance setBill(int id, String month, int year) {
+		
+		return employeeDaoObj.setBill(id, month, year);
+	}
+
+	public double getBill(double perhourbill, Attendance aObj) {
+		
+		return employeeDaoObj.getBill(perhourbill, aObj);
+	}
+
+	public String getEmpById(int id) {
+		
+		return employeeDaoObj.getEmpById(id);
+	}
+
 	
 }

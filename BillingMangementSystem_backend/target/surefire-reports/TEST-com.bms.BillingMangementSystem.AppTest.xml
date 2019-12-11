@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="com.bms.BillingMangementSystem.AppTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="com.bms.BillingMangementSystem.AppTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_221\jre\bin"/>
@@ -27,9 +27,9 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="D:\java programs\finalProject\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf5227343345950015364.tmp"/>
+    <property name="classworlds.conf" value="D:\java programs\finalProject\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf59768812506184658.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_221/bin/server;C:/Program Files/Java/jre1.8.0_221/bin;C:/Program Files/Java/jre1.8.0_221/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.8.0_221\bin;D:\apache-maven-3.6.2-bin\apache-maven-3.6.2\bin;C:\Users\shubhangi.upreti\AppData\Local\Microsoft\WindowsApps;;D:\eclipse-jee-oxygen-3a-win32-x86_64\eclipse;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_221\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_221/bin/server;C:/Program Files/Java/jre1.8.0_221/bin;C:/Program Files/Java/jre1.8.0_221/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\Java\jdk1.8.0_221\bin;D:\apache-maven-3.6.2-bin\apache-maven-3.6.2\bin;C:\Program Files\nodejs\;C:\Users\shubhangi.upreti\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\shubhangi.upreti\AppData\Local\Microsoft\WindowsApps;C:\Users\shubhangi.upreti\AppData\Roaming\npm;C:\Users\shubhangi.upreti\AppData\Local\Programs\Microsoft VS Code\bin;D:\eclipse-jee-oxygen-3a-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,5 +61,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.bms.BillingMangementSystem.AppTest" name="testApp" time="0.003"/>
+  <testcase classname="com.bms.BillingMangementSystem.AppTest" name="testApp" time="0"/>
 </testsuite>

@@ -33,6 +33,14 @@ public class RolesDaoImpl implements RolesDao{
 		
 	}
 
+	public Roles getRoleById(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		Roles r=session.get(Roles.class, id);
+		return r;
+		
+		
+	}
+
 	
 
 }

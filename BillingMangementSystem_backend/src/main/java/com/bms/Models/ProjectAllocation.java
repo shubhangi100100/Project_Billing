@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="ProjectAllocation")
@@ -23,6 +24,11 @@ public class ProjectAllocation {
 	@OneToOne
 	@JoinColumn(name="employeeId")
 	Employee eObj;
+	
+	@Transient
+	int configId;
+	@Transient
+	int employeeId;
 	
 	public int getAllocationId() {
 		return allocationId;
@@ -42,10 +48,27 @@ public class ProjectAllocation {
 	public void seteObj(Employee eObj) {
 		this.eObj = eObj;
 	}
+	
+	
+	public int getConfigId() {
+		return configId;
+	}
+	public void setConfigId(int configId) {
+		this.configId = configId;
+	}
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
 	@Override
 	public String toString() {
-		return "ProjectAllocation [allocationId=" + allocationId + ", pcObj=" + pcObj + ", eObj=" + eObj + "]";
+		return "ProjectAllocation [allocationId=" + allocationId + ", pcObj=" + pcObj + ", eObj=" + eObj + ", configId="
+				+ configId + ", employeeId=" + employeeId + "]";
 	}
+	
+	
 
 	
 	

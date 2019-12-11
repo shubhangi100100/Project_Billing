@@ -9,5 +9,5 @@ import com.bms.Models.Roles;
 public interface RolesService {
 
 	public List<Roles> getAllRoles();
-
+	public Roles getRoleById(int id);
 }

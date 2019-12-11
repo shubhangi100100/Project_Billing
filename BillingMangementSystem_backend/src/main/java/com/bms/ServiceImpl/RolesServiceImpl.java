@@ -26,6 +26,11 @@ public class RolesServiceImpl implements RolesService{
 		
 	}
 
+	public Roles getRoleById(int id) {
+		
+		return rolesDaoObj.getRoleById(id);
+	}
+
 	
 
 }

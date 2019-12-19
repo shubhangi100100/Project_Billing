@@ -1,9 +1,0 @@
-package com.bms.Models;
-
-public class ProjectAllocation {
-
-	private int allocationId;
-	private int employeeId;
-	private int configId;
-	
-}

@@ -1,9 +1,0 @@
-package com.bms.Test;
-
-public class RolesTest {
-
-	public RolesTest() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

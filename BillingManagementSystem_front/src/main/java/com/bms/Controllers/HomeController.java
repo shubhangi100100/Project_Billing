@@ -52,7 +52,7 @@ public class HomeController {
 		session.invalidate();
 		map.addAttribute("txt", "you have been logged out");
 		
-		return "HomePage";
+		return "LogOut";
 		
 	}
 	

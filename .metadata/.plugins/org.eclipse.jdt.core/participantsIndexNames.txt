@@ -21,5 +21,7 @@ D:\java programs\finalProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsea
 \OnlineStore_Frontend\src\main\java
 D:\java programs\finalProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2402566129.index
 \OnlineStore_Frontend\src\main\java
+D:\java programs\finalProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1761715835.index
+\BillingManagementSystem_front\src\main\java
 D:\java programs\finalProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2663397172.index
 \BillingManagementSystem_frontend\src\main\resources

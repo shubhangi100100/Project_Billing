@@ -44,6 +44,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\java programs\finalProject\BillingManagementSystem_front"/>
 			<item value="D:\java programs\finalProject\BillingMangementSystem_backend\pom.xml"/>
 			<item value="D:\java programs\finalProject\BillingMangementSystem_backend"/>
 			<item value="D:\java programs\finalProject"/>
@@ -59,6 +60,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.bms.BillingManagementSystem_Middle"/>
 			<item value="com.bms.BillingManagementSystem_front"/>
 			<item value="com.bms.BillinManagementSystem_frontend"/>
 			<item value="com.bms.BillingMangementSystem"/>
@@ -67,6 +69,7 @@
 			<item value="com.bms"/>
 		</list>
 		<list key="artifactId">
+			<item value="BillingManagementSystem_Middle"/>
 			<item value="BillingManagementSystem_front"/>
 			<item value="BillinManagementSystem_frontend"/>
 			<item value="BillingMangementSystem"/>

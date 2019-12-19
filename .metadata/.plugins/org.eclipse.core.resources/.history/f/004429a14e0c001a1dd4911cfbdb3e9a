@@ -1,9 +1,0 @@
-package com.bms.DaoImpl;
-
-public class RolesDaoImpl {
-
-	public RolesDaoImpl() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

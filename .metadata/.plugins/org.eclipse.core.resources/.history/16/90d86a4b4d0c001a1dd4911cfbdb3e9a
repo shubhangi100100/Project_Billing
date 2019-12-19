@@ -1,9 +1,0 @@
-package com.bms.Daos;
-
-public class ProjectDaos {
-
-	public ProjectDaos() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

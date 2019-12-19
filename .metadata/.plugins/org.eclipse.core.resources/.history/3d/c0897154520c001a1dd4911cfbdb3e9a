@@ -1,7 +1,0 @@
-package com.bms.DaoImpl;
-
-public class ProjectDaoImpl implements ProjectDao {
-
-	
-
-}

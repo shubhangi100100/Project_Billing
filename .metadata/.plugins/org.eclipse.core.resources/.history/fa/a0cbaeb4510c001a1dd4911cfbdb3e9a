@@ -1,9 +1,0 @@
-package com.bms.DaoImpl;
-
-public class ProjectDaoImpl {
-
-	public ProjectDaoImpl() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

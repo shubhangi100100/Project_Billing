@@ -9,6 +9,7 @@
 </head>
 <body>
 <jsp:include page="Header2.jsp"/>
+<div align="center">
 <h3>Employee Billing</h3><hr>
 
 			
@@ -22,6 +23,7 @@
 				<h5>Year: ${yr} </h5>
 
 				<h5>Billing : <strong>$ ${bill}</strong></h5>
+</div>
   <jsp:include page="Footer.jsp"></jsp:include>
 </body>
 </html>

@@ -1,7 +1,0 @@
-package com.bms.Daos;
-
-public interface RolesDao {
-
-	public List<Roles> getAllRoles();
-
-}

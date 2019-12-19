@@ -18,7 +18,7 @@
 <title>View developer report</title>
 </head>
 <body>
-<jsp:include page="Header2.jsp"/>
+<jsp:include page="Header3.jsp"/>
 <div align="center">
 <form action="saveReport"  method="get">
 
@@ -84,7 +84,7 @@
 					</div>
 
 
-					<div class="form-group">
+					<div align="center"  class="form-group" >
 
 							    <button type="submit" class="btn btn-primary">Submit</button>
 

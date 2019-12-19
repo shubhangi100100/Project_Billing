@@ -147,7 +147,7 @@ public class AdminController {
 		
 		System.out.println(projectId+""+roleId+""+location+""+employeeId);
 		if(sessionHandler(map)) {
-			//ModelAndView mv=new ModelAndView("Login");
+			
 			return "Login";
 			
 		}
@@ -191,12 +191,18 @@ public class AdminController {
 				return "Login";
 
 			}
-		List<Attendance> aList=employeeServiceObj.getAllAttendance();
+	
+			
+			List<Attendance> aList=employeeServiceObj.getAllAttendance();
+			
+			
 		map.addAttribute("aList", aList);
+		
 		return "ViewReportDev";
 		
 		
 		}
+		
 		
 		
 	
@@ -239,7 +245,7 @@ public class AdminController {
 		return mv;
 
 	}
-
+	
 	
 
 		

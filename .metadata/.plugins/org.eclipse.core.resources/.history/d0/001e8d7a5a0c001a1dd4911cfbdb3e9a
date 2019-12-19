@@ -1,9 +1,0 @@
-package com.bms.Controllers;
-
-public class AdminController {
-
-	public AdminController() {
-		// TODO Auto-generated constructor stub
-	}
-
-}

@@ -47,7 +47,7 @@ public class HomeController {
 		else
 		{
 			session.setAttribute("userObj", uObj);
-			return new ResponseEntity<String>(uObj.getRole(), HttpStatus.OK);
+			return new ResponseEntity<User>(uObj, HttpStatus.OK);
 			
 		}
 		

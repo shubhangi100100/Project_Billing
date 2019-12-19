@@ -1,9 +1,0 @@
-package com.bms.Models;
-@Entity
-@Table(name="empRoles")
-public class Roles {
-	@Id
-	private int roleId;
-	private String roleName;
-	
-}

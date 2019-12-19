@@ -114,7 +114,7 @@
 
 		<label>Half day:</label>
 
-		<f:input path="halfDay" size="30" cssClass="form-control" placeholder="Enter Number of Half Days" required="true"/><br>
+		<f:input path="halfDay" size="30" max="30" cssClass="form-control" placeholder="Enter Number of Half Days" required="true" /><br>
 
 		</div>
 
@@ -124,7 +124,7 @@
 
 			<label>Full Day:</label>
 
-			<f:input path="fullDay" size="30" cssClass="form-control" placeholder="Enter Number of Full Days" required="true"/><br>
+			<f:input path="fullDay" size="30" max="30" cssClass="form-control" placeholder="Enter Number of Full Days" required="true"/><br>
 
 		</div>
 
